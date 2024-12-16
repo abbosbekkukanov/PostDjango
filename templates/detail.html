@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}
+<h2 class="page-title">
+    {{post.title}}
+</h2>
+{% endblock %}
+{% block content %}
+    <h2 class="section-title">{{post.title}}</h2> 
+    
+    <strong class="author">Yozuvchi: {{post.author}}</strong>
+    <div class="post-detail">
+        <p class="post-body">{{ post.body }}</p>
+        {% if post.author == request.user %}
+        <div class="post-buttons">
+            <a href="{% url 'posts:update' post.id %}" class="btn btn-edit">Tahrirlash</a>
+            <a href="{% url 'posts:delete' post.id %}" class="btn btn-delete">O'chirish</a>
+        </div>
+        {% endif %}
+    </div>
+{% endblock %}

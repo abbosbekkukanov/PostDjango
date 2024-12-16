@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}
+<h2 class="page-title">
+    O'chirish > {{post.title}}
+</h2>
+{% endblock %}
+
+{% block content %}
+    <h2 class="section-title">O'chirish > {{post.title}}</h2>
+    <div class="form-container">
+       <form action="" method="post" class="form">
+        {% csrf_token %}
+        <p style="color: red; font-size: 21px;">Siz haqiqatdan ham ushbu postni o'chirib tashlamoqchimisiz</p>
+        <button type="submit" class="btn btn-denger">O'chirishni Tastiqlash</button>
+        <br>
+        <a class="btn btn-submit" href="/"> Ortga qaytish</a>
+       </form>
+    </div>
+{% endblock %}

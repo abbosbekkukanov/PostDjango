@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+<h2 class="page-title">
+    Tahrirlash {{post.title}}
+</h2>
+{% endblock %}
+
+{% block content %}
+    <h2 class="section-title">Tahrirlash {{post.title}}</h2>
+    <div class="form-container">
+       <form action="" method="post" class="form">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit" class="btn btn-submit">Tahrirlashni Tastiqlash</button>
+       </form>
+    </div>
+{% endblock %}

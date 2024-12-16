@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="brand">Blog</a>
+            <div class="menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">
+                            Bosh sahifa
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'posts:create' %}" class="nav-link">
+                            Post yozish
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">
+                            link
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content">
+        {% block content %} {% endblock %}
+    </div>
+
+</body>
+
+</html>
